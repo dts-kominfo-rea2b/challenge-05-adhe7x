@@ -8,14 +8,9 @@ const names = ["Halo", "Angel", "Nyoman", "Ketut", "Aisyah"];
 // ...
 
 const sorter = (array, orderType) => {
-    let arrayNames = [];
-    for (x = 0; x < array.length; x++) {
-        arrayNames.push(`${array[x]}`);
-        arrayNames[x].toString();
-    };
-    let tempOrder = orderType(arrayNames);
+    let tempOrder = orderType(array);
     let order = [];
-    for (x = 0; x < arrayNames.length; x++) {
+    for (x = 0; x < array.length; x++) {
         order.push(`${x+1}. ${tempOrder[x]}`)
         order[x].toString();
     }
@@ -39,10 +34,10 @@ const sortDescending = (names) => {
 };
 
 // ! JANGAN DIMODIFIKASI
-// (function main() {
-//   console.log(sorter?.(names, sortAscending)?.join("\n"));
-//   console.log(sorter?.(names, sortDescending)?.join("\n"));
-// })();
+(function main() {
+  console.log(sorter?.(names, sortAscending)?.join("\n"));
+  console.log(sorter?.(names, sortDescending)?.join("\n"));
+})();
 
 module.exports = {
   sorter,
